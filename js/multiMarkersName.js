@@ -23,7 +23,6 @@ AFRAME.registerComponent("markers_start", {
       markersNameArray.push("Marker_" + i);
     }
 
-    // const gltfModel = document.createAttribute('gltf-model')
     for (let k = 0; k < 2; k++) {
       let markerEl = document.createElement("a-marker");
       markerEl.setAttribute("type", "pattern");
