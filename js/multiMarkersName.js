@@ -10,10 +10,11 @@ for (let g = 1; g < 4; g++) {
   assetsId.push(idName);
 }
 
-var current_mode = screen.orientation;
-screen.orientation.lock("landscape-primary").then(function () {
-  alert("Locked");
-});
+if ("orientation" in screen) {
+  alert("API supported, yeah!");
+  screen.msLockOrientation.lock("portrait-primary");
+  screen.mozLockOrientation.lock("portrait-primary");
+}
 
 AFRAME.registerComponent("markers_start", {
   init: function () {
