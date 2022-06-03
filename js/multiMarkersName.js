@@ -64,15 +64,33 @@ AFRAME.registerComponent("registerevents", {
   },
 });
 
-const myHeight = window.innerWidth * window.devicePixelRatio;
-const myWidth = window.innerHeight * window.devicePixelRatio;
+const toggleFullScreen = () => {
+  console.log("make full screen");
 
-var arToolkitSource = new THREEx.ArToolkitSource({
-  sourceType: "webcam",
-  // resolution of at which we initialize the source image
-  sourceWidth: myWidth,
-  sourceHeight: myHeight,
-  // resolution displayed for the source
-  displayWidth: myWidth,
-  displayHeight: myHeight,
-});
+  var doc = window.document;
+  var docEl = doc.documentElement;
+
+  var requestFullScreen =
+    docEl.requestFullscreen ||
+    docEl.mozRequestFullScreen ||
+    docEl.webkitRequestFullScreen ||
+    docEl.msRequestFullscreen;
+  var cancelFullScreen =
+    doc.exitFullscreen ||
+    doc.mozCancelFullScreen ||
+    doc.webkitExitFullscreen ||
+    doc.msExitFullscreen;
+
+  if (
+    !doc.fullscreenElement &&
+    !doc.mozFullScreenElement &&
+    !doc.webkitFullscreenElement &&
+    !doc.msFullscreenElement
+  ) {
+    requestFullScreen.call(docEl);
+  } else {
+    cancelFullScreen.call(doc);
+  }
+};
+
+toggleFullScreen();
