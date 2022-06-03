@@ -10,6 +10,11 @@ for (let g = 1; g < 4; g++) {
   assetsId.push(idName);
 }
 
+var current_mode = screen.orientation;
+screen.orientation.lock("portrait").then(function () {
+  alert("Locked");
+});
+
 AFRAME.registerComponent("markers_start", {
   init: function () {
     console.log("Add markers to the scene");
@@ -66,8 +71,3 @@ AFRAME.registerComponent("registerevents", {
     });
   },
 });
-
-screen.addEventListener("orientationchange", function () {
-  console.log("The orientation of the screen is: " + screen.orientation);
-});
-screen.lockOrientation("landscape");
