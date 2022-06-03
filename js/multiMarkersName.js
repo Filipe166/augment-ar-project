@@ -1,16 +1,15 @@
-//Multi Markers WebAR-AR.js and Aframe - Playing the Archive - Connected Environment CASA-UCL
-
 //Global letiable
 let markersURLArray = [];
 let markersNameArray = [];
 let assetsId = [];
 
-for (let g = 1; g < 4; g++) {
+for (let g = 1; g <= 1; g++) {
   let idName = "#asset-" + g;
   assetsId.push(idName);
 }
 
 function lock(orientation) {
+  alert("Please go into landscape mode for a better experience!");
   // (A1) GO INTO FULL SCREEN FIRST
   let de = document.documentElement;
   if (de.requestFullscreen) {
@@ -23,7 +22,6 @@ function lock(orientation) {
     de.msRequestFullscreen();
   }
 
-  // (A2) THEN LOCK ORIENTATION
   screen.orientation.lock(orientation);
 }
 lock("landscape-primary");
@@ -34,13 +32,13 @@ AFRAME.registerComponent("markers_start", {
 
     let sceneEl = document.querySelector("a-scene");
 
-    for (let i = 1; i < 3; i++) {
+    for (let i = 1; i <= 2; i++) {
       let url = "resources/markers/marker-" + i + ".patt";
       markersURLArray.push(url);
       markersNameArray.push("Marker_" + i);
     }
 
-    for (let k = 0; k < 2; k++) {
+    for (let k = 0; k <= 1; k++) {
       let markerEl = document.createElement("a-marker");
       markerEl.setAttribute("type", "pattern");
       markerEl.setAttribute("url", markersURLArray[k]);
