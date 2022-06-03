@@ -39,6 +39,7 @@ AFRAME.registerComponent("markers_start", {
       textEl.setAttribute("id", "animated-model");
       textEl.setAttribute("animation-mixer", "loop: repeat");
       textEl.setAttribute("gltf-model", animationIds[k]);
+      textEl.setAttribute("gesture-handler", "");
       textEl.object3D.rotation.set(0, 0, 0);
       textEl.object3D.scale.set(0.5, 0.5, 0.5);
       markerEl.appendChild(textEl);
@@ -61,4 +62,17 @@ AFRAME.registerComponent("registerevents", {
       console.log("Marker Lost: ", markerId);
     });
   },
+});
+
+const myHeight = window.innerWidth * window.devicePixelRatio;
+const myWidth = window.innerHeight * window.devicePixelRatio;
+
+var arToolkitSource = new THREEx.ArToolkitSource({
+  sourceType: "webcam",
+  // resolution of at which we initialize the source image
+  sourceWidth: myWidth,
+  sourceHeight: myHeight,
+  // resolution displayed for the source
+  displayWidth: myWidth,
+  displayHeight: myHeight,
 });
