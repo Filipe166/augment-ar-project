@@ -3,12 +3,11 @@
 //Global letiable
 let markersURLArray = [];
 let markersNameArray = [];
-let animationIds = [];
+let assetsId = [];
 
-for (let g = 1; g < 3; g++) {
-  let idName = "#animated-" + g;
-  animationIds.push(idName);
-  console.log(idName);
+for (let g = 1; g < 4; g++) {
+  let idName = "#asset-" + g;
+  assetsId.push(idName);
 }
 
 AFRAME.registerComponent("markers_start", {
@@ -35,9 +34,9 @@ AFRAME.registerComponent("markers_start", {
       sceneEl.appendChild(markerEl);
 
       let textEl = document.createElement("a-entity");
-      textEl.setAttribute("id", "animated-model");
+      textEl.setAttribute("id", "asset-model");
       textEl.setAttribute("animation-mixer", "loop: repeat");
-      textEl.setAttribute("gltf-model", animationIds[k]);
+      textEl.setAttribute("gltf-model", assetsId[k]);
       textEl.setAttribute("gesture-handler", "");
       textEl.setAttribute("position", {
         x: 0,
