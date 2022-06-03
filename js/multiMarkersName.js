@@ -11,7 +11,7 @@ for (let g = 1; g < 4; g++) {
 }
 
 var current_mode = screen.orientation;
-screen.orientation.lock("portrait").then(function () {
+screen.orientation.lock("landscape-primary").then(function () {
   alert("Locked");
 });
 
