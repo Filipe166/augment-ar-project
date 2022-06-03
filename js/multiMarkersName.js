@@ -12,8 +12,8 @@ for (let g = 1; g < 4; g++) {
 
 if ("orientation" in screen) {
   alert("API supported, yeah!");
-  screen.msLockOrientation.lock("portrait-primary");
-  screen.mozLockOrientation.lock("portrait-primary");
+  screen.msLockOrientation.lock("landscape-primary");
+  screen.mozLockOrientation.lock("landscape-primary");
 }
 
 AFRAME.registerComponent("markers_start", {
