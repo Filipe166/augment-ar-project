@@ -35,12 +35,16 @@ AFRAME.registerComponent("markers_start", {
       sceneEl.appendChild(markerEl);
 
       let textEl = document.createElement("a-entity");
-
       textEl.setAttribute("id", "animated-model");
       textEl.setAttribute("animation-mixer", "loop: repeat");
       textEl.setAttribute("gltf-model", animationIds[k]);
       textEl.setAttribute("gesture-handler", "");
-      textEl.object3D.rotation.set(0, 0, 0);
+      textEl.setAttribute("position", {
+        x: 0,
+        y: 1,
+        z: 0,
+      });
+      textEl.object3D.rotation.set(30, 0, 0);
       textEl.object3D.scale.set(0.5, 0.5, 0.5);
       markerEl.appendChild(textEl);
     }
