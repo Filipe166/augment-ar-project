@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <title>Augment AR Project</title>
+
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
     <script src="js/multiMarkersName.js"></script>
   </head>
 
   <body style="margin: 0; overflow: hidden">
     <a-scene
+      embedded
       markers_start
       vr-mode-ui="enabled: false;"
       loading-screen="enabled: false;"
@@ -46,3 +54,5 @@
     </a-scene>
   </body>
 </html>
+
+<!DOCTYPE html>
