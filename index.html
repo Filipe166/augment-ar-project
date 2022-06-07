@@ -25,17 +25,17 @@
       renderer="logarithmicDepthBuffer: true;"
       arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
       id="scene"
-      gesture-detector
       arjs="debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;"
     >
       <a-assets>
         <a-asset-item id="asset-1" src="assets/asset-1.glb"></a-asset-item>
       </a-assets>
+      
       <a-marker
         id="animated-marker"
         type="pattern"
         preset="custom"
-        url="resources/markers/marker-2-arjon.patt"
+        url="resources/markers/marker-erjon.patt"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
@@ -43,10 +43,8 @@
       >
         <a-image
           src="assets/asset-2.png"
-          scale="4 4 4"
-          class="clickable"
-          rotation="-90 0 0"
-          gesture-handler
+          scale="2 2 2"
+          rotation="-90 1 0"
         ></a-image>
       </a-marker>
 

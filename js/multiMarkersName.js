@@ -9,7 +9,7 @@ for (let g = 1; g <= 1; g++) {
 }
 
 function lock(orientation) {
-  alert("Please go into landscape mode for a better experience!");
+  alert("Switch to landscape mode for a better experience!");
   // (A1) GO INTO FULL SCREEN FIRST
   let de = document.documentElement;
   if (de.requestFullscreen) {
