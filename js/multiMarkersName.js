@@ -42,7 +42,7 @@ AFRAME.registerComponent("markers_start", {
         z: 0,
       });
       textEl.object3D.rotation.set(30, 0, 0);
-      textEl.object3D.scale.set(0.5, 0.5, 0.5);
+      textEl.object3D.scale.set(0.65, 0.65, 0.65);
       markerEl.appendChild(textEl);
     }
   },
