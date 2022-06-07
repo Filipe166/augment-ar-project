@@ -8,24 +8,6 @@ for (let g = 1; g <= 1; g++) {
   assetsId.push(idName);
 }
 
-function lock(orientation) {
-  alert("Switch to landscape mode for a better experience!");
-  // (A1) GO INTO FULL SCREEN FIRST
-  let de = document.documentElement;
-  if (de.requestFullscreen) {
-    de.requestFullscreen();
-  } else if (de.mozRequestFullScreen) {
-    de.mozRequestFullScreen();
-  } else if (de.webkitRequestFullscreen) {
-    de.webkitRequestFullscreen();
-  } else if (de.msRequestFullscreen) {
-    de.msRequestFullscreen();
-  }
-
-  screen.orientation.lock(orientation);
-}
-lock("landscape-primary");
-
 AFRAME.registerComponent("markers_start", {
   init: function () {
     console.log("Add markers to the scene");
@@ -35,10 +17,10 @@ AFRAME.registerComponent("markers_start", {
     for (let i = 1; i <= 2; i++) {
       let url = "resources/markers/marker-" + i + ".patt";
       markersURLArray.push(url);
-      markersNameArray.push("Marker_" + i);
+      markersNameArray.push("marker_" + i);
     }
 
-    for (let k = 0; k <= 1; k++) {
+    for (let k = 0; k < 1; k++) {
       let markerEl = document.createElement("a-marker");
       markerEl.setAttribute("type", "pattern");
       markerEl.setAttribute("url", markersURLArray[k]);
