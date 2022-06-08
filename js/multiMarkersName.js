@@ -38,11 +38,11 @@ AFRAME.registerComponent("markers_start", {
       textEl.setAttribute("gesture-handler", "");
       textEl.setAttribute("position", {
         x: 0,
-        y: 1,
+        y: -5,
         z: 0,
       });
       textEl.object3D.rotation.set(30, 0, 0);
-      textEl.object3D.scale.set(0.65, 0.65, 0.65);
+      textEl.object3D.scale.set(0.6, 0.6, 0.6);
       markerEl.appendChild(textEl);
     }
   },
